@@ -30,6 +30,10 @@
       "@typescript-eslint/parser": [".ts", ".tsx", ".d.ts"]
     },
     "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      },
       "typescript": {
         "project": "path/to/folder"
       }
@@ -47,7 +51,7 @@
       }
     ],
     "import/prefer-default-export": "off",
-    "import/order": ["error", {"newlines-between": "always"}],
+
     "import/no-unresolved": "error",
     "indent": [
       2,
