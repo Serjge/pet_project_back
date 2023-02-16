@@ -10,8 +10,8 @@ rootRoutes.use((req, res, next) => {
 
 rootRoutes.get("/", async (req: Request, res: Response) => {
 	const message = "Hello";
-
-	res.send(JSON.stringify(message));
+	res.status(200);
+	res.send(message);
 });
 
 rootRoutes.get("/send", async (req: Request, res: Response) => {

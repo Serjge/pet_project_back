@@ -1,8 +1,8 @@
 import express, { Express, Request, Response } from "express";
 import cors from "cors";
 
-import { CONFIG } from "config";
 import { rootRoutes, authRoutes } from "routes";
+import { CONFIG } from "config";
 
 const { port } = CONFIG.app;
 
@@ -20,3 +20,5 @@ app.use((req: Request, res: Response) => {
 app.listen(port, () => {
 	console.log(`Example app listening on port ${port}`);
 });
+
+export default app;
