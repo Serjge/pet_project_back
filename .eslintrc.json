@@ -40,6 +40,17 @@
     }
   },
   "rules": {
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        "extendDefaults": true,
+        "types": {
+          "{}": false
+        }
+      }
+    ],
+    "consistent-return": ["error", { "treatUndefinedAsUnspecified": false }],
+
     "import/extensions": [
       "error",
       "ignorePackages",

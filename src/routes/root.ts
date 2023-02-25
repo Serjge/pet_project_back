@@ -8,14 +8,15 @@ rootRoutes.use((req, res, next) => {
 	next();
 });
 
-rootRoutes.get("/", async (req: Request, res: Response) => {
-	const message = "Hello";
+rootRoutes.post("/", async (req: Request, res: Response) => {
+	const message = "Hello API";
 
-	res.send(JSON.stringify(message));
+	res.send(message);
 });
 
 rootRoutes.get("/send", async (req: Request, res: Response) => {
 	const message = {
+		from: "\"Node js\" <nodejs@example.com>",
 		to: "serjge@yandex.ru",
 		subject: "Congratulations! You are successfully registred on our site",
 		html: `
@@ -23,13 +24,17 @@ rootRoutes.get("/send", async (req: Request, res: Response) => {
         
         <i>данные вашей учетной записи:</i>
          <ul>
+         
            <li>login: </li>
            <li>password:</li>
          </ul>
 
         <p>Данное письмо не требует ответа.<p>`
 	};
-
-	await mailer(message);
+	try {
+		await mailer(message);
+	} catch (e) {
+		// console.log(e);
+	}
 	res.send(JSON.stringify(message));
 });
