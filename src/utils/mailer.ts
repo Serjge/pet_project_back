@@ -17,7 +17,14 @@ const createTransporter = createTransport({
 	}
 });
 
-export const mailer = async (message: Mail.Options) => {
+export const mailer = async (to: string, subject: string, html: string) => {
+	const message: Mail.Options = {
+		from: "\"pet project by Serjge\" <serjjge@gmail.com>",
+		to,
+		subject,
+		html
+	};
+
 	try {
 		await createTransporter.sendMail(message);
 	} catch (e) {

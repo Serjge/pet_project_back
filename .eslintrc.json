@@ -40,6 +40,10 @@
     }
   },
   "rules": {
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": "warn",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/ban-types": [
       "error",
       {
@@ -50,6 +54,7 @@
       }
     ],
     "consistent-return": ["error", { "treatUndefinedAsUnspecified": false }],
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
 
     "import/extensions": [
       "error",
